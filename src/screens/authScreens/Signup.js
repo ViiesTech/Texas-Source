@@ -74,7 +74,6 @@ const Signup = ({navigation}) => {
                   ) : null}
                  
                 </TouchableOpacity>
-                <View>
                     <Text style={{color: 'white'}}>
                       I have read and accept the  <Text style={{fontWeight:'bold'}}>
                           terms and conditions
@@ -82,7 +81,6 @@ const Signup = ({navigation}) => {
 
                    
                     </Text>
-                  </View>
               </TouchableOpacity>
               <Button navigation={navigation} navigateTo={'emailVerify'} color={'#29CF6E'} title={'Create an account'} />
             </View>

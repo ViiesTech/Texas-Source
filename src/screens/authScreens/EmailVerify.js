@@ -41,7 +41,8 @@ const Signup = ({navigation}) => {
               backgroundColor: '#00190A',
               width: '100%',
               flex: 1,
-              padding: 40,
+              paddingVertical: 40,
+              paddingHorizontal:30,
               borderTopEndRadius: 70,
               borderTopLeftRadius: 70,
             }}>
@@ -127,12 +128,12 @@ const styles = StyleSheet.create({
   root: {flex: 1, padding: 20,},
   title: {textAlign: 'center', fontSize: 30,},
    
-   codeFieldRoot: {marginTop: 20,gap:13,},
+   codeFieldRoot: {marginTop: 20,gap:10,},
   cell: {
    flex:1,
    color:'white',
     // height: 65,
-    padding:20,
+    padding:15,
     justifyContent:'center',
     alignItems:'center',
     // lineHeight: 38,

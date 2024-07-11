@@ -10,11 +10,11 @@ export const SocialButton = ({title, backgrounndColor, textColor, name,navigatio
         backgroundColor: backgrounndColor,
         height: 60,
         width: '100%',
-        borderRadius: 25,
+        borderRadius: 40,
         alignItems: 'center',
         flexDirection: 'row',
       }}>
-      <View style={{width: 100, alignItems: 'center'}}>
+      <View style={{width: 80, alignItems: 'center'}}>
         {name === 'apple' ? (
           <AntDesign name="apple1" color={'white'} size={25} />
         ) : name === 'google' ? (

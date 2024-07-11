@@ -1,4 +1,4 @@
-import {View, Text, ImageBackground, Image, StyleSheet} from 'react-native';
+import {View, Text, ImageBackground, Image, StyleSheet, ScrollView} from 'react-native';
 import React from 'react';
 import {Images} from '../../assets/Images/Index';
 import {SocialButton} from '../../componets/SocialButtons';
@@ -22,10 +22,10 @@ const SocialLogin = ({navigation}) => {
               backgroundColor: '#00190A',
               width: '100%',
               flex: 1,
-              padding: 40,
               borderTopEndRadius: 70,
               borderTopLeftRadius: 70,
             }}>
+              <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{flexGrow:1,padding:40}}>
             <View style={{alignItems: 'center'}}>
               <Text style={styles.lightText}>Innovative</Text>
               <Text style={styles.boldText}>Manufacturing</Text>
@@ -73,6 +73,7 @@ const SocialLogin = ({navigation}) => {
               Recover my account
             </Text>
             <View></View>
+            </ScrollView>
           </View>
         </View>
       </View>

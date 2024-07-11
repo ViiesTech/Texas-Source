@@ -33,20 +33,21 @@ const Explore1 = ({navigation}) => {
 
   const renderItem = ({item}) => {
     return(
-<TouchableOpacity onPress={()=>navigation.navigate('explore2')} style={{backgroundColor:'white',borderRadius:10,alignSelf:'center',width:'98%'}}>
+<TouchableOpacity activeOpacity={0.5} onPress={()=>navigation.navigate('explore2')} style={{backgroundColor:'white',borderRadius:10,alignSelf:'center',width:'98%'}}>
   <View style={{borderRadius:10}}>
 <Image source={item.pic} style={{width:'100%',borderTopLeftRadius:10,borderTopRightRadius:10}}/>
 </View>
 <View style={{padding:10}}>
-<View style={{flexDirection:'row',justifyContent:'space-between',gap:10}}>
+<View style={{flexDirection:'row',gap:10}}>
 
-<View style={{width:280}}>
+<View style={{width:'88%',}}>
   <Text style={{color:'black',fontWeight:'bold',fontSize:16}}>{item.title}</Text>
   <Text style={{color:'black'}}>{item.text}</Text>
 </View>
-<View style={{justifyContent:'center',alignItems:'center',backgroundColor:'#29CF6E',borderRadius:15,padding:2}}>
+<View style={{justifyContent:'center',alignItems:'center',backgroundColor:'#29CF6E',borderRadius:15,padding:2,}}>
 <MaterialCommunityIcons name='greater-than' color={'white'} size={25}/>
 </View>
+
 </View>
 </View>
 </TouchableOpacity>
