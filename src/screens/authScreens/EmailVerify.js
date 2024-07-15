@@ -4,6 +4,7 @@ import {
   ImageBackground,
   Image,
   StyleSheet,
+  ScrollView,
 } from 'react-native';
 import React, {useState} from 'react';
 import {Images} from '../../assets/Images/Index';
@@ -25,7 +26,7 @@ const Signup = ({navigation}) => {
   });
   return (
     <ImageBackground style={{flex: 1}} source={Images.background}>
-      <View style={{flex: 1, backgroundColor: '#00190A', opacity: 0.8}}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{flexGrow: 1, backgroundColor: '#00190A', opacity: 0.8}}>
         <View style={{alignItems: 'center', padding: 30}}>
           <Image source={Images.logo2} />
         </View>
@@ -118,7 +119,7 @@ const Signup = ({navigation}) => {
             </View>
           </View>
         </View>
-      </View>
+      </ScrollView>
     </ImageBackground>
   );
 };

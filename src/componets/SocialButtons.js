@@ -14,6 +14,7 @@ export const SocialButton = ({title, backgrounndColor, textColor, name,navigatio
         alignItems: 'center',
         flexDirection: 'row',
       }}>
+        <View style={{alignItems:'center',justifyContent:'center', flexDirection:'row',flex:1}}>
       <View style={{width: 80, alignItems: 'center'}}>
         {name === 'apple' ? (
           <AntDesign name="apple1" color={'white'} size={25} />
@@ -24,6 +25,7 @@ export const SocialButton = ({title, backgrounndColor, textColor, name,navigatio
         )}
       </View>
       <Text style={{color: textColor, fontSize: 16}}>{title}</Text>
+      </View>
     </TouchableOpacity>
   );
 };

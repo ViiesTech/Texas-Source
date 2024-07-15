@@ -8,6 +8,7 @@ import {
   PanResponder,
   Animated,
   ImageBackground,
+  ScrollView,
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {Images} from '../../assets/Images/Index';
@@ -67,14 +68,15 @@ const GetStarted = ({navigation}) => {
 
   return (
     <ImageBackground source={Images.background} style={styles.container}>
-      <View
-        style={{
-          flex: 1,
+      <ScrollView
+      showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          flexGrow: 1,
           backgroundColor: '#00190A',
           opacity: 0.8,
           width: '100%',
         }}>
-        <View style={{alignItems: 'center', flex: 1, justifyContent: 'center'}}>
+        <View style={{alignItems: 'center', flex: 1,marginVertical:20, justifyContent: 'center'}}>
           <Image source={Images.logo} style={{marginTop: 20}} />
         </View>
 
@@ -161,7 +163,7 @@ const GetStarted = ({navigation}) => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     borderRadius: 100,
-                    left: 3,
+                    // left: 3,
                   }}>
                   <AntDesign color="white" name="right" size={25} />
                 </TouchableOpacity>
@@ -169,7 +171,7 @@ const GetStarted = ({navigation}) => {
             </View>
           </View>
         </View>
-      </View>
+      </ScrollView>
     </ImageBackground>
   );
 };

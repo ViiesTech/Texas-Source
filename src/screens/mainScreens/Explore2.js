@@ -96,7 +96,7 @@ const Explore2 = ({navigation}) => {
           padding: 10,
           flex:1
         }}>
-        <Image source={item.pic} style={{height:150,width:'100%'}}/>
+        <Image source={item.pic} style={{width:'100%'}}/>
         <View
           style={{
             flexDirection: 'row',
@@ -135,6 +135,7 @@ const Explore2 = ({navigation}) => {
   return (
     <ImageBackground style={{flex: 1}} source={Images.background}>
       <ScrollView
+      showsVerticalScrollIndicator={false}
         contentContainerStyle={{
           backgroundColor: '#00190A',
           paddingBottom: 20,

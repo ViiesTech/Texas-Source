@@ -1,4 +1,4 @@
-import {View, Text, ImageBackground, Image} from 'react-native';
+import {View, Text, ImageBackground, Image, ScrollView} from 'react-native';
 import React from 'react';
 import {Images} from '../../assets/Images/Index';
 import {Input} from '../../componets/Input';
@@ -7,7 +7,7 @@ import {Button} from '../../componets/Button';
 const Login = ({navigation}) => {
   return (
     <ImageBackground style={{flex: 1}} source={Images.background}>
-      <View style={{flex: 1, backgroundColor: '#00190A', opacity: 0.8}}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{flexGrow: 1, backgroundColor: '#00190A', opacity: 0.8}}>
         <View style={{alignItems: 'center', padding: 30}}>
           <Image source={Images.logo2} />
         </View>
@@ -74,7 +74,7 @@ const Login = ({navigation}) => {
             </View>
           </View>
         </View>
-      </View>
+      </ScrollView>
     </ImageBackground>
   );
 };

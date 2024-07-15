@@ -44,7 +44,7 @@ const Explore1 = ({navigation}) => {
   <Text style={{color:'black',fontWeight:'bold',fontSize:16}}>{item.title}</Text>
   <Text style={{color:'black'}}>{item.text}</Text>
 </View>
-<View style={{justifyContent:'center',alignItems:'center',backgroundColor:'#29CF6E',borderRadius:15,padding:2,}}>
+<View style={{justifyContent:'center',alignItems:'center',backgroundColor:'#29CF6E',borderRadius:15,padding:2,right:1}}>
 <MaterialCommunityIcons name='greater-than' color={'white'} size={25}/>
 </View>
 
@@ -55,7 +55,7 @@ const Explore1 = ({navigation}) => {
   }
   return (
     <ImageBackground style={{flex: 1}} source={Images.background}>
-      <ScrollView contentContainerStyle={{backgroundColor: '#00190A',paddingBottom:20, flexGrow: 1, opacity: 0.9}}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{backgroundColor: '#00190A',paddingBottom:20, flexGrow: 1, opacity: 0.9}}>
         <Header />
         <View style={{paddingHorizontal:25,}}>
           <View style={{}}>
