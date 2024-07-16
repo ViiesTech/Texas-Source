@@ -134,13 +134,13 @@ const Explore2 = ({navigation}) => {
   };
   return (
     <ImageBackground style={{flex: 1}} source={Images.background}>
+            <ImageBackground style={{flex: 1}} source={Images.layer2}>
+
       <ScrollView
       showsVerticalScrollIndicator={false}
         contentContainerStyle={{
-          backgroundColor: '#00190A',
           paddingBottom: 20,
           flexGrow: 1,
-          opacity: 0.9,
         }}>
         <Header search={true} />
         <View style={{paddingHorizontal: 25,paddingTop:25}}>
@@ -197,6 +197,7 @@ const Explore2 = ({navigation}) => {
           <ModalComponent backdropPress={handleBackdropPress} isModalVisible={modalVisible}/>
         </View>
       </ScrollView>
+      </ImageBackground>
     </ImageBackground>
   );
 };

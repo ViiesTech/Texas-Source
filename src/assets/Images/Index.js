@@ -8,4 +8,7 @@ export const Images = {
   image2:require('./image2.png'),
   image3:require('./image3.png'),
   image4:require('./image4.png'),
+  layer:require('./layer.png'),
+  layer2:require('./layer2.png'),
+
 }

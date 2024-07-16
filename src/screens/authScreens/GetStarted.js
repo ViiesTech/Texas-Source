@@ -68,110 +68,116 @@ const GetStarted = ({navigation}) => {
 
   return (
     <ImageBackground source={Images.background} style={styles.container}>
-      <ScrollView
-      showsVerticalScrollIndicator={false}
-        contentContainerStyle={{
-          flexGrow: 1,
-          backgroundColor: '#00190A',
-          opacity: 0.8,
-          width: '100%',
-        }}>
-        <View style={{alignItems: 'center', flex: 1,marginVertical:20, justifyContent: 'center'}}>
-          <Image source={Images.logo} style={{marginTop: 20}} />
-        </View>
-
-        <View
-          style={{
-            backgroundColor: '#00190A',
-            borderTopEndRadius: 70,
-            borderTopLeftRadius: 70,
+      <ImageBackground style={{flex: 1}} source={Images.layer}>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{
+            flexGrow: 1,
+            width: '100%',
           }}>
           <View
             style={{
-              backgroundColor: '#00190A',
-              width: '100%',
-              paddingVertical: 40,
+              alignItems: 'center',
+              flex: 1,
+              marginVertical: 20,
               justifyContent: 'center',
+            }}>
+            <Image source={Images.logo} style={{marginTop: 20}} />
+          </View>
+
+          <View
+            style={{
+              backgroundColor: '#00190A',
               borderTopEndRadius: 70,
               borderTopLeftRadius: 70,
             }}>
-            <View style={{bottom: 20, alignItems: 'center'}}>
-              <Text style={{color: '#fff', fontSize: 40, marginTop: 10}}>
-                Innovative
-              </Text>
-              <Text
-                style={{
-                  color: '#fff',
-                  fontSize: 40,
-                  fontWeight: 'bold',
-                  marginTop: 10,
-                }}>
-                Manufacturing
-              </Text>
-              <Text style={{color: '#fff', fontSize: 40, marginTop: 10}}>
-                Solutions On
-              </Text>
-              <Text
-                style={{
-                  color: '#fff',
-                  fontSize: 40,
-                  fontWeight: 'bold',
-                  marginTop: 10,
-                }}>
-                The Market
-              </Text>
-              <View
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  flexDirection: 'row',
-                  borderRadius: 35,
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  height: 65,
-                  width: 290,
-                  marginTop: 25,
-                }}>
-                <Animated.View
-                  {...panResponder.panHandlers}
-                  style={[
-                    styles.draggableItem,
-                    {
-                      transform: [{translateX: pan.x}, {translateY: pan.y}],
+            <View
+              style={{
+                backgroundColor: '#00190A',
+                width: '100%',
+                paddingVertical: 40,
+                justifyContent: 'center',
+                borderTopEndRadius: 70,
+                borderTopLeftRadius: 70,
+              }}>
+              <View style={{bottom: 20, alignItems: 'center'}}>
+                <Text style={{color: '#fff', fontSize: 40, marginTop: 10}}>
+                  Innovative
+                </Text>
+                <Text
+                  style={{
+                    color: '#fff',
+                    fontSize: 40,
+                    fontWeight: 'bold',
+                    marginTop: 10,
+                  }}>
+                  Manufacturing
+                </Text>
+                <Text style={{color: '#fff', fontSize: 40, marginTop: 10}}>
+                  Solutions On
+                </Text>
+                <Text
+                  style={{
+                    color: '#fff',
+                    fontSize: 40,
+                    fontWeight: 'bold',
+                    marginTop: 10,
+                  }}>
+                  The Market
+                </Text>
+                <View
+                  style={{
+                    backgroundColor: '#FFFFFF',
+                    flexDirection: 'row',
+                    borderRadius: 35,
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    height: 65,
+                    width: 290,
+                    marginTop: 25,
+                  }}>
+                  <Animated.View
+                    {...panResponder.panHandlers}
+                    style={[
+                      styles.draggableItem,
+                      {
+                        transform: [{translateX: pan.x}, {translateY: pan.y}],
+                        backgroundColor: '#29CF6E',
+                        zIndex: 20,
+                        width: 140,
+                        height: '100%',
+                        borderRadius: 40,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      },
+                    ]}>
+                    <Text style={{color: 'white', fontSize: 15}}>
+                      GET STARTED
+                    </Text>
+                  </Animated.View>
+
+                  <TouchableOpacity
+                    ref={iconRef}
+                    onPress={() => navigation.navigate('socialLogin')}
+                    onLayout={handleLayout}
+                    style={{
                       backgroundColor: '#29CF6E',
-                      zIndex: 20,
-                      width: 140,
+                      zIndex: 10,
+                      width: 65,
                       height: '100%',
-                      borderRadius: 40,
                       alignItems: 'center',
                       justifyContent: 'center',
-                    },
-                  ]}>
-                  <Text style={{color: 'white', fontSize: 15}}>
-                    GET STARTED
-                  </Text>
-                </Animated.View>
-
-                <TouchableOpacity
-                  ref={iconRef}
-                  onPress={() => navigation.navigate('socialLogin')}
-                  onLayout={handleLayout}
-                  style={{
-                    backgroundColor: '#29CF6E',
-                    zIndex: 10,
-                    width: 65,
-                    height: '100%',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    borderRadius: 100,
-                    // left: 3,
-                  }}>
-                  <AntDesign color="white" name="right" size={25} />
-                </TouchableOpacity>
+                      borderRadius: 100,
+                      // left: 3,
+                    }}>
+                    <AntDesign color="white" name="right" size={25} />
+                  </TouchableOpacity>
+                </View>
               </View>
             </View>
           </View>
-        </View>
-      </ScrollView>
+        </ScrollView>
+      </ImageBackground>
     </ImageBackground>
   );
 };

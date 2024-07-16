@@ -1,13 +1,15 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import Routes from './src/routes/Routes'
+import { View, Text, SafeAreaView, Platform } from 'react-native';
+import React from 'react';
+import Routes from './src/routes/Routes';
 
 const App = () => {
+    const Wrapper = Platform.OS === 'ios' ? SafeAreaView : View;
+
     return (
-            <View style={{ flex: 1 }}>
-                <Routes/>
-            </View>
-    )
+        <Wrapper style={{ flex: 1 }}>
+            <Routes/>
+        </Wrapper>
+    );
 }
 
-export default App
+export default App;

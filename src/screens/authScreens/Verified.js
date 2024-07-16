@@ -7,7 +7,9 @@ import {Button} from '../../componets/Button';
 const Verified = ({navigation}) => {
   return (
     <ImageBackground style={{flex: 1}} source={Images.background}>
-      <View style={{flex: 1, backgroundColor: '#00190A', opacity: 0.8}}>
+                      <ImageBackground style={{flex:1}} source={Images.layer}>
+
+      <View style={{flex: 1}}>
         <View style={{alignItems: 'center', padding: 30}}>
           <Image source={Images.logo2} />
         </View>
@@ -36,6 +38,7 @@ const Verified = ({navigation}) => {
           </View>
         </View>
       </View>
+      </ImageBackground>
     </ImageBackground>
   );
 };
