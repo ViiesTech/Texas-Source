@@ -85,12 +85,7 @@ const GetStarted = ({navigation}) => {
             <Image source={Images.logo} style={{marginTop: 20}} />
           </View>
 
-          <View
-            style={{
-              backgroundColor: '#00190A',
-              borderTopEndRadius: 70,
-              borderTopLeftRadius: 70,
-            }}>
+       
             <View
               style={{
                 backgroundColor: '#00190A',
@@ -175,7 +170,6 @@ const GetStarted = ({navigation}) => {
                 </View>
               </View>
             </View>
-          </View>
         </ScrollView>
       </ImageBackground>
     </ImageBackground>

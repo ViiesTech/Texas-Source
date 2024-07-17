@@ -19,13 +19,7 @@ const SocialLogin = ({navigation}) => {
         <View style={{alignItems: 'center', padding: 30}}>
           <Image source={Images.logo2} />
         </View>
-        <View
-          style={{
-            backgroundColor: '#00190A',
-            borderTopEndRadius: 70,
-            borderTopLeftRadius: 70,
-            flex: 1,
-          }}>
+       
           <View
             style={{
               backgroundColor: '#00190A',
@@ -86,7 +80,6 @@ const SocialLogin = ({navigation}) => {
               <View></View>
             </View>
           </View>
-        </View>
       </ScrollView>
         </ImageBackground>
     </ImageBackground>
