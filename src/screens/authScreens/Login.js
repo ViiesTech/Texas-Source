@@ -62,6 +62,7 @@ const Login = ({navigation}) => {
                   }}></View>
                 <View style={{marginTop: 30}}>
                   <Button
+                  onPress={()=>navigation.navigate('signup')}
                     navigation={navigation}
                     navigateTo="signup"
                     color="#000000"
