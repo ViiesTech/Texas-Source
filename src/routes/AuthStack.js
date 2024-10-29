@@ -16,7 +16,7 @@ function AuthStack() {
         <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='getStarted'>
             <Stack.Screen name="getStarted" component={GetStarted} />
             <Stack.Screen name="socialLogin" component={SocialLogin} />
-            <Stack.Screen name="SelectRole" component={SelectRole} />
+            {/* <Stack.Screen name="SelectRole" component={SelectRole} /> */}
             <Stack.Screen name="login" component={Login} />
             <Stack.Screen name="signup" component={Signup} />
             <Stack.Screen name="ForgetPassword" component={ForgetPassword} />

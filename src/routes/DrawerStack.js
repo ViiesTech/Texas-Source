@@ -16,6 +16,11 @@ import Dashboard from '../screens/mainScreens/Dashboard';
 import { useDispatch } from 'react-redux';
 import { Logout } from '../redux/Slice';
 import { ShowToast } from '../GlobalFunctions/ShowToast';
+import AddProduct from '../screens/mainScreens/AddProduct';
+import MyProduct from '../screens/mainScreens/MyProduct';
+import Profile from '../screens/mainScreens/Profile';
+import ProductDetail from '../screens/mainScreens/ProductDetail';
+import ChangePassword from '../screens/authScreens/ChangePassword';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -25,10 +30,15 @@ const MainStack = () => {
         <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='explore1'>
             <Stack.Screen name="explore1" component={Explore1} />
             <Stack.Screen name="explore2" component={Explore2} />
+            <Stack.Screen name="ProductDetail" component={ProductDetail} />
             <Stack.Screen name="Cart" component={Cart} />
             <Stack.Screen name="Payment" component={Payment} />
             <Stack.Screen name="MyOrder" component={MyOrder} />
             <Stack.Screen name="Dashboard" component={Dashboard} />
+            <Stack.Screen name="AddProduct" component={AddProduct} />
+            <Stack.Screen name="MyProduct" component={MyProduct} />
+            <Stack.Screen name="Profile" component={Profile} />
+            <Stack.Screen name="ChangePassword" component={ChangePassword} />
         </Stack.Navigator>
     );
 }
@@ -62,14 +72,14 @@ const CustomDrawerContent = () => {
     return (
         <View style={styles.mainContainer}>
             <View style={styles.drawerContainer}>
-                <View style={styles.profileView}>
+                <TouchableOpacity style={styles.profileView} onPress={() => navigation.navigate('Profile')}>
                     <Image
                         source={Images.user}
                         style={styles.imageStyle}
                     />
                     <Text style={styles.username}>Chris John</Text>
                     <Text style={styles.email}>chrisjohn@gmail.com</Text>
-                </View>
+                </TouchableOpacity>
                 {drawerItems.map((item) => {
                     return (
                         <DrawerItem

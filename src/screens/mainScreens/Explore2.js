@@ -2,19 +2,17 @@ import {
   View,
   Text,
   FlatList,
-  Image,
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
 import React, { useState } from 'react';
 import { Header } from '../../componets/Header';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import ModalComponent from '../../componets/Modal';
 import { exploreCard, initialCategoriesData, responsiveHeight } from '../../utils';
 import Container from '../../componets/Container';
 import { useNavigation } from '@react-navigation/native';
+import ProductCard from '../../componets/ProductCard';
 const Explore2 = () => {
-  const [modalVisible, setModalVisible] = useState(false)
 
 
   const [categories, setCategories] = useState(initialCategoriesData);
@@ -29,27 +27,12 @@ const Explore2 = () => {
   };
   const renderItem = ({ item }) => {
     return (
-      <TouchableOpacity
-        activeOpacity={0.5}
-        onPress={() => setModalVisible(!modalVisible)}
-        style={{
-          backgroundColor: 'white',
-          borderRadius: 10,
-          alignSelf: 'center',
-          padding: 10,
-          flex: 1
-        }}>
-        <Image source={item.pic} style={{ width: '100%' }} />
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            marginTop: 5,
-          }}>
-          <Text style={{ color: 'black', fontWeight: 'bold' }}>{item.title}</Text>
-          <Text style={{ color: 'black', fontWeight: 'bold' }}>{item.price}</Text>
-        </View>
-      </TouchableOpacity>
+        <ProductCard 
+          pic={item.pic}
+          onPress={() => navigation.navigate('ProductDetail')}
+          title={item.title}
+          price={item.price}
+        />
     );
   };
   const renderCategories = ({ item }) => {
@@ -72,9 +55,9 @@ const Explore2 = () => {
     );
   };
 
-  const handleBackdropPress = () => {
-    setModalVisible(false);
-  };
+  // const handleBackdropPress = () => {
+  //   setModalVisible(false);
+  // };
   return (
     <Container>
       <ScrollView
@@ -137,9 +120,9 @@ const Explore2 = () => {
           />
         </View>
 
-        <View>
+        {/* <View>
           <ModalComponent backdropPress={handleBackdropPress} isModalVisible={modalVisible} />
-        </View>
+        </View> */}
       </ScrollView>
     </Container>
   );

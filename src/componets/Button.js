@@ -1,7 +1,7 @@
 import React from 'react';
 import { ActivityIndicator, Text, TouchableOpacity } from 'react-native';
 
-export const Button = ({ color, title, onPress, loading, buttonStyle }) => {
+export const Button = ({ color, title, onPress, loading, buttonStyle,textStyle }) => {
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -16,7 +16,7 @@ export const Button = ({ color, title, onPress, loading, buttonStyle }) => {
       {loading ? (
         <ActivityIndicator size={'large'} color={'white'} />
       ) : (
-        <Text style={{ color: 'white', fontSize: 16 }}>{title}</Text>
+        <Text style={[{ color: 'white', fontSize: 16 },textStyle]}>{title}</Text>
       )}
     </TouchableOpacity>
   );

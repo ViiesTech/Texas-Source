@@ -1,3 +1,4 @@
+import icons from "../assets/icons";
 import { Images } from "../assets/Images/Index";
 import { Dimensions } from 'react-native';
 
@@ -58,7 +59,7 @@ export const drawerItems = [
         id: 5,
         icon: 'package-variant-closed',
         label: 'Products',
-        navTo: '',
+        navTo: 'MyProduct',
     }
 ]
 
@@ -241,6 +242,38 @@ export const orders = [
         price: '250',
         date: '9/2/2024',
         status: 'shipping'
+    }
+]
+
+export const profileOptions = [
+    {
+        id: 1,
+        text: 'My Order',
+        icon: icons.shoppingBag,
+        nav: 'MyOrder'
+    },
+    {
+        id: 2,
+        text: 'Products',
+        icon: icons.product,
+        nav: 'MyProduct'
+    },
+    {
+        id: 3,
+        text: 'Change Password',
+        icon: icons.key,
+        nav: 'ChangePassword'
+    },
+    {
+        id: 4,
+        text: 'Vendor Dashboard',
+        icon: icons.dashboard,
+        nav: 'Dashboard'
+    },
+    {
+        id: 5,
+        text: 'Logout',
+        icon: icons.logout
     }
 ]
 

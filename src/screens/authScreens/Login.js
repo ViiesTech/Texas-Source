@@ -56,7 +56,6 @@ const Login = () => {
           <View style={{ alignItems: 'center', padding: 30 }}>
             <Image source={Images.logo2} />
           </View>
-
           <View
             style={{
               backgroundColor: '#00190A',
@@ -115,7 +114,7 @@ const Login = () => {
                 }}></View>
               <View style={{ marginTop: 30 }}>
                 <Button
-                  onPress={() => navigation.navigate('SelectRole')}
+                  onPress={() => navigation.navigate('signup')}
                   navigateTo="signup"
                   color="#000000"
                   title="Create an account"

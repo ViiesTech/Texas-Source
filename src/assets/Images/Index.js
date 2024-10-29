@@ -10,6 +10,7 @@ export const Images = {
   image4:require('./image4.png'),
   layer:require('./layer.png'),
   layer2:require('./layer2.png'),
-  user: require('../Images/userProfile.jpeg')
+  user: require('../Images/userProfile.jpeg'),
+  detail: require('../Images/productImage.png')
 
 }

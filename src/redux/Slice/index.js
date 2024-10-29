@@ -3,7 +3,7 @@ import { Apis } from '../Services';
 
 
 const initialState = {
-    role: '',
+    // role: '',
     token: '',
     user: {}
 }
@@ -12,9 +12,9 @@ export const Slice = createSlice({
     name: 'Slice',
     initialState,
     reducers: {
-        UserType: (state, action) => {
-            state.role = action.payload;
-        },
+        // UserType: (state, action) => {
+        //     state.role = action.payload;
+        // },
         Logout: (state) => {
             state.user = null,
             state.token = null;

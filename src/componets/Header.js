@@ -36,8 +36,8 @@ export const Header = ({ search, leftArrow, headerText }) => {
             </TouchableOpacity>
           ) : null}
           {!leftArrow &&
-            <TouchableOpacity style={styles.iconBackground}>
-              <Feather name='user' size={20} color={Colors.secondary} />
+            <TouchableOpacity style={styles.iconBackground} onPress={() => navigation.navigate('AddProduct')}>
+              <Feather name='plus' size={20} color={Colors.secondary} />
             </TouchableOpacity>
           }
         </View>

@@ -50,6 +50,13 @@ export const Apis = createApi({
                 method: 'POST',
                 body: data
             })
+        }),
+        createProduct: builder.mutation({
+            query: data => ({
+                url: endpoints.ADD_PRODUCT,
+                method: 'POST',
+                body: data
+            })
         })
     })
 })
@@ -59,5 +66,6 @@ export const {
     useLoginMutation,
     useForgetPasswordMutation,
     useVerifyOTPMutation,
-    useResetPasswordMutation
+    useResetPasswordMutation,
+    useCreateProductMutation
 } = Apis;
