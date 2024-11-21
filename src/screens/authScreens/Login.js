@@ -25,6 +25,7 @@ const Login = () => {
   }
 
   const onSignIn = async () => {
+    
     if (!state.email) {
       return ShowToast('Please enter your email')
     } else if (!state.email) {
