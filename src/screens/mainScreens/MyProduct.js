@@ -107,6 +107,6 @@ const styles = StyleSheet.create({
         color: Colors.white,
         fontSize: responsiveFontSize(2.5),
         marginVertical: responsiveHeight(7),
-        textAlign: 'center'
+        textAlign: 'center',
     }
 })
