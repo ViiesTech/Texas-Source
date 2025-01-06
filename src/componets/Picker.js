@@ -4,7 +4,7 @@ import DropDownPicker from 'react-native-dropdown-picker';
 import { responsiveHeight, responsiveWidth } from '../utils';
 import { Colors } from '../assets/Utils/Colors';
 
-const Picker = ({ placeholder, items, setItems,value,setValue}) => {
+const Picker = ({ placeholderText, placeholder, items, setItems,value,setValue,containerStyle,style, iconStyle, listStyle}) => {
     const [open, setOpen] = useState(false);
     // const [value, setValue] = useState(null)
 
@@ -17,14 +17,14 @@ const Picker = ({ placeholder, items, setItems,value,setValue}) => {
             open={open}
             value={value}
             items={items}
-            containerStyle={{ width: responsiveWidth(86) }}
-            dropDownContainerStyle={styles.containerStyle}
-            style={styles.drop}
+            containerStyle={[{ width: responsiveWidth(86) },containerStyle]}
+            dropDownContainerStyle={[styles.containerStyle,listStyle]}
+            style={[styles.drop,style]}
             placeholder={placeholder}
-            placeholderStyle={styles.dropText}
-            dropDownDirection="BOTTOM"
+            placeholderStyle={[styles.dropText,placeholderText]}
+            dropDownDirection="TOP"
             textStyle={{color: Colors.white,marginLeft: responsiveHeight(1.2)}}
-            arrowIconStyle={{ tintColor: Colors.white }}
+            arrowIconStyle={[{ tintColor: Colors.white },iconStyle]}
             // ArrowDownIconComponent={({ style }) => <MyArrowDownIcon style={style} />}
             setOpen={setOpen}
             setValue={(val) => setValue(val)}
@@ -36,27 +36,16 @@ const Picker = ({ placeholder, items, setItems,value,setValue}) => {
 export default Picker;
 
 const styles = StyleSheet.create({
-    // heading: {
-    //     color: Colors.primaryGreen,
-    //     fontWeight: 'bold',
-    //     fontSize: responsiveFontSize(1.8),
-    //     marginBottom: responsiveHeight(1),
-    // },
     drop: {
         borderWidth: 1.5,
-        // marginBottom: responsiveHeight(3),
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: 'transparent',
         borderColor: Colors.white,
-        zIndex: 0,
-        // paddingVertical: responsiveHeight(1.8),
         borderRadius: 10,
     },
-
     containerStyle: {
         zIndex: 999,
-        // paddingBottom: responsiveHeight(12),
         borderWidth: 1,
         height:responsiveHeight(15),
         maxHeight:responsiveHeight(15),

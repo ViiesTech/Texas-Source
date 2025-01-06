@@ -1,12 +1,13 @@
 import { TextInput } from "react-native"
 
-export const Input = ({ placeHolder, onChangeText, value, keyboardType,secureTextEntry,style,editable,onPress }) => {
+export const Input = ({ placeHolder, onChangeText, value, keyboardType,secureTextEntry,style,editable,onPress,length }) => {
   return (
     <TextInput
     onPress={onPress}
       value={value}
       onChangeText={onChangeText}
       keyboardType={keyboardType}
+      maxLength={length}
       secureTextEntry={secureTextEntry}
       placeholderTextColor={'#949494'}
       editable={editable}

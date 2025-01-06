@@ -170,13 +170,14 @@ console.log(form.company_image.path)
                 style={styles.inputStyle}
                 placeHolder={'Company Description'}
               />
+              <TouchableOpacity onPress={() => onSelectImage()}>
                 <Input
-                 onPress={onSelectImage}
                   value={form.company_image.name}
                   style={styles.inputStyle}
                   editable={false}
                   placeHolder={'Select photo'}
                 />
+                </TouchableOpacity>
               <Input
                 onChangeText={text => onChangeText(text, 'name')}
                 value={form.name}

@@ -1,5 +1,6 @@
-// export const BASE_URL = 'https://khvw9wf1-3028.inc1.devtunnels.ms/api/user/' //forwarding port
-export const BASE_URL = 'https://appsdemo.pro/Texas_Server/api/user/'
+// export const BASE_URL = 'https://khvw9wf1-3028.inc1.devtunnels.ms/api/user/'; //forwarding port
+export const BASE_URL = 'https://appsdemo.pro/Texas_Server/api/user/';
+export const PUBLISHABLE_KEY = 'pk_test_51JeezZLPp9miWmIeYcfiFClHyySHpw0Q6f9yp8FJnaeJ9WBXmGIx7H6I8Wj5fq5sA2zYRZwb26kq71vBiM9oGCU3003rlY77Xz'
 // export const BASE_URL = 'http://localhost:3028/api/user/' //for my local machine
 // export const BASE_URL = 'http://10.0.2.2:3028/api/user/';  //for emulator
 
@@ -19,5 +20,13 @@ export const endpoints = {
     GET_PRODUCT_CATEGORIES: 'GetAllCatagores',
     PRODUCT_FILTER_BY_CATEGORIES: 'FilterProductByCategory',
     DELETE_PRODUCT: 'deleteProduct',
-    EDIT_PRODUCT: 'editProduct'
+    EDIT_PRODUCT: 'editProduct',
+    CREATE_CUSTOMER: 'createCustomer',
+    SETUP_INTENT: 'createSetupIntent',
+    PAYMENT: 'createPaymentIntent',
+    ATTACH_PAYMENT: 'attachPaymentMethod',
+    GET_ALL_CARDS: 'listSavedCards',
+    GET_USER_ORDERS: 'getAllUserOrder',
+    GET_OWNER_ORDERS: 'getAllOwnerOrder',
+    ADD_REVIEW: 'RateAProduct'
 }

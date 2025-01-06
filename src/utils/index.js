@@ -41,19 +41,19 @@ export const drawerItems = [
         id: 2,
         icon: 'cash',
         label: 'Wallet',
-        navTo: '',
+        navTo: 'Wallet',
     },
     {
         id: 3,
         icon: 'shopping',
-        label: 'My Order',
+        label: 'Orders',
         navTo: 'MyOrder'
     },
     {
         id: 4,
         icon: 'view-dashboard',
         label: 'Vendor Dashboard',
-        navTo: 'Dashboard',
+        navTo: '',
     },
     {
         id: 5,
@@ -138,7 +138,7 @@ export const initialCategoriesData = [
 export const statusOrders = [
     {
         id: 1,
-        title: 'pending',
+        title: 'neworder',
         selected: true,
     },
     {
@@ -148,22 +148,17 @@ export const statusOrders = [
     },
     {
         id: 3,
-        title: 'shipping',
+        title: 'delivered',
         selected: false,
     },
     {
         id: 4,
-        title: 'accepted',
-        selected: false,
-    },
-    {
-        id: 5,
         title: 'cancel',
         selected: false,
     },
     {
-        id: 6,
-        title: 'shipping',
+        id: 5,
+        title: 'pending',
         selected: false,
     },
 ];
@@ -313,3 +308,26 @@ export const convertToDropdownData = (dataArray) => {
         value: item.toLowerCase().replace(/\s+/g, '_')
     }));
 }
+
+export const statusData = [
+    {
+        id: 1,
+        label: 'shipping',
+        value: 'shipping'
+    },
+    {
+        id: 2,
+        label: 'pending',
+        value: 'pending'
+    },
+    {
+        id: 3,
+        label: 'cancel',
+        value: 'cancel'
+    },
+    {
+        id: 4,
+        label: 'delivered',
+        value: 'delivered'
+    }
+]

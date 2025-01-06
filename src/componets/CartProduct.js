@@ -2,9 +2,9 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { Colors } from '../assets/Utils/Colors'
 import { responsiveFontSize, responsiveHeight, responsiveWidth } from '../utils'
-import Icon from 'react-native-vector-icons/AntDesign'
+import Icon from 'react-native-vector-icons/Entypo'
 
-const CartProduct = ({ name, image, desc, price, onCardPress, count, onQuantityPress }) => {
+const CartProduct = ({ name, image, desc, price, onCardPress, count, onQuantityPress, onCrossPress }) => {
     return (
         <TouchableOpacity style={styles.cardStyle} onPress={onCardPress}>
             <View style={{ flexDirection: 'row', gap: responsiveHeight(2) }}>
@@ -37,13 +37,13 @@ const CartProduct = ({ name, image, desc, price, onCardPress, count, onQuantityP
                     </View>
                 </View>
             </View>
-            <View style={styles.checkView}>
+            <TouchableOpacity style={styles.checkView} onPress={onCrossPress}>
                 <Icon
-                    name={'check'}
+                    name={'cross'}
                     color={Colors.white}
                     size={20}
                 />
-            </View>
+            </TouchableOpacity>
         </TouchableOpacity>
     )
 }

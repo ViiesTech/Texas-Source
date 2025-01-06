@@ -5,10 +5,8 @@ import AntDesign from 'react-native-vector-icons/AntDesign'
 import { responsiveFontSize, responsiveHeight, responsiveWidth } from '../utils';
 import { Colors } from '../assets/Utils/Colors';
 import { Button } from './Button';
-import { useNavigation } from '@react-navigation/native';
-function ModalComponent({ isModalVisible, backdropPress, cartConfirmation }) {
+function ModalComponent({ isModalVisible, backdropPress, cartConfirmation, totalPrice, total_quantity, onOrderPress }) {
 
-  const navigation = useNavigation()
 
   return (
     <Modal
@@ -29,12 +27,12 @@ function ModalComponent({ isModalVisible, backdropPress, cartConfirmation }) {
                 <Text style={styles.text, { color: Colors.secondary }}>Total</Text>
               </View>
               <View>
-                <Text style={styles.text}>3 Qyt</Text>
-                <Text style={styles.text, { color: Colors.secondary }}>€2500</Text>
+                <Text style={styles.text}>{total_quantity} Qyt</Text>
+                <Text style={styles.text, { color: Colors.secondary }}>€{totalPrice}</Text>
               </View>
             </View>
             <View style={styles.horizontalLine} />
-            <Button onPress={() => navigation.navigate('Payment')} buttonStyle={styles.buttonStyle} color={Colors.secondary} title={'Order Now'} />
+            <Button onPress={onOrderPress} buttonStyle={styles.buttonStyle} color={Colors.secondary} title={'Order Now'} />
           </>
           :
           <>

@@ -5,6 +5,8 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import { persistor, store } from './src/redux/Store/index.js';
 import SnackBar from './src/componets/SnackBar.js';
+import { StripeProvider } from '@stripe/stripe-react-native';
+import { PUBLISHABLE_KEY } from './src/redux/Constant/index.js';
 
 const App = () => {
     const Wrapper = Platform.OS === 'ios' ? SafeAreaView : View;
@@ -13,7 +15,9 @@ const App = () => {
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
                 <Wrapper style={{ flex: 1 }}>
-                    <Routes />
+                    <StripeProvider publishableKey={PUBLISHABLE_KEY}>
+                        <Routes />
+                    </StripeProvider>
                     <SnackBar position={'top'} />
                 </Wrapper>
             </PersistGate>

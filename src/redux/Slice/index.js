@@ -8,6 +8,7 @@ const initialState = {
     baseUrl: '',
     user: {},
     cart: [],
+    customer_id: null
 }
 
 export const Slice = createSlice({
@@ -23,6 +24,9 @@ export const Slice = createSlice({
         },
         addToCart: (state, action) => {
             state.cart = action.payload
+        },
+        removeFromCart: (state) => {
+            state.cart = []
         }
     },
     extraReducers: (builder) => {
@@ -43,11 +47,16 @@ export const Slice = createSlice({
                     state.user = action.payload?.data
                 }
             })
+        builder.addMatcher(Apis.endpoints.createCustomer.matchFulfilled, (state, action) => {
+            if (action.payload.customerId) {
+                state.customer_id = action.payload.customerId
+            }
+        })
     }
 
 
 });
 
-export const { UserType, Logout, addToCart } = Slice.actions;
+export const { UserType, Logout, addToCart, removeFromCart } = Slice.actions;
 
 export default Slice.reducer;

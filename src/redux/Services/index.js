@@ -124,6 +124,60 @@ export const Apis = createApi({
                 method: 'POST',
                 body: data
             })
+        }),
+        createCustomer: builder.mutation({
+            query: ({ email }) => ({
+                url: endpoints.CREATE_CUSTOMER,
+                method: 'POST',
+                body: { email }
+            })
+        }),
+        createSetupIntent: builder.mutation({
+            query: ({ customerId }) => ({
+                url: endpoints.SETUP_INTENT,
+                method: 'POST',
+                body: { customerId }
+            })
+        }),
+        payment: builder.mutation({
+            query: (data) => ({
+                url: endpoints.PAYMENT,
+                method: 'POST',
+                body: data
+            })
+        }),
+        attachPayment: builder.mutation({
+            query: ({ customerId, methodId }) => ({
+                url: endpoints.ATTACH_PAYMENT,
+                method: 'POST',
+                body: { customerId: customerId, paymentMethodId: methodId }
+            })
+        }),
+        getAllCards: builder.mutation({
+            query: ({ customer_id }) => ({
+                url: endpoints.GET_ALL_CARDS,
+                method: 'POST',
+                body: { customerId: customer_id }
+            })
+        }),
+        getUserOrders: builder.mutation({
+            query: () => ({
+                url: endpoints.GET_USER_ORDERS,
+                method: 'POST',
+            })
+        }),
+        getOwnerOrders: builder.mutation({
+            query: () => ({
+                url: endpoints.GET_OWNER_ORDERS,
+                method: 'POST',
+            })
+        }),
+        addReview: builder.mutation({
+            query: (data) => ({
+                url: endpoints.ADD_REVIEW,
+                method: 'POST',
+                body: data
+            })
         })
     })
 })
@@ -144,5 +198,13 @@ export const {
     useLazyGetProductCateoriesQuery,
     useProductFilterByCategoriesMutation,
     useDeleteProductMutation,
-    useEditProductMutation
+    useEditProductMutation,
+    useCreateCustomerMutation,
+    useCreateSetupIntentMutation,
+    usePaymentMutation,
+    useGetAllCardsMutation,
+    useAttachPaymentMutation,
+    useGetUserOrdersMutation,
+    useGetOwnerOrdersMutation,
+    useAddReviewMutation
 } = Apis;

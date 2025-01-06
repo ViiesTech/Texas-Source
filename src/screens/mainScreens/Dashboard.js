@@ -1,17 +1,42 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import React, { useEffect, useState } from 'react'
 import Container from '../../componets/Container'
 import { Header } from '../../componets/Header'
-import { responsiveFontSize, responsiveHeight } from '../../utils'
+import { orders, responsiveFontSize, responsiveHeight } from '../../utils'
 import { Colors } from '../../assets/Utils/Colors'
 import Option from 'react-native-vector-icons/Ionicons'
 import Clock from 'react-native-vector-icons/AntDesign'
+import { useGetOwnerOrdersMutation } from '../../redux/Services'
+import { ShowToast } from '../../GlobalFunctions/ShowToast'
+import OrdersCard from '../../componets/OrdersCard'
+import Loader from '../../componets/Loader'
 
 const Dashboard = () => {
+    const [ownerOrders, setOwnerOrders] = useState([])
+    const [getOwnerOrders, { isLoading }] = useGetOwnerOrdersMutation()
+
+
+    useEffect(() => {
+
+        fetchOwnerOrders()
+
+    }, [])
+
+    const fetchOwnerOrders = async () => {
+        await getOwnerOrders().unwrap().then((res) => {
+            console.log('response =====>', res)
+            setOwnerOrders(res)
+        }).catch((error) => {
+            console.log('failed to get user orders =======>', error)
+            return ShowToast('Some problem occured')
+        })
+    }
+
+
     return (
         <Container>
             <Header leftArrow={true} headerText={'Dashboard'} />
-            <View style={styles.subContainer}>
+            <ScrollView contentContainerStyle={styles.subContainer}>
                 <View style={styles.totalEarningView}>
                     <Text style={styles.heading}>Total Earning</Text>
                     <Text style={styles.price}>$209.21</Text>
@@ -34,7 +59,24 @@ const Dashboard = () => {
                         </View>
                     </View>
                 </View>
-            </View>
+                <View style={{ paddingTop: responsiveHeight(4) }}>
+
+                    {/* {isLoading ?
+                        <Loader size={'large'} />
+                        :
+                        ownerOrders?.length < 1 ?
+                            <Text style={styles.message}>No Orders Here...</Text>
+                            :
+                            ownerOrders.map((item) => (
+                                <OrdersCard
+                                    owner={true}
+                                    price={item?.price}
+                                    title={item?.title}
+                                    date={item?.date}
+                                />
+                            ))} */}
+                </View>
+            </ScrollView>
         </Container>
     )
 }

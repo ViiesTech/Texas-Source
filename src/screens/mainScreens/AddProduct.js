@@ -178,7 +178,7 @@ const AddProduct = ({ route }) => {
                   return (
                     <View style={styles.imageContainer}>
                       <Image
-                        source={{uri:item}}
+                        source={{ uri: item }}
                         style={styles.imageStyle}
                       />
                       {!editItem &&
@@ -235,7 +235,9 @@ const AddProduct = ({ route }) => {
               })}
               placeHolder={'Price'}
             />
-            <Picker placeholder={'Select Category'} items={items} value={state.category} setValue={val => setState(prevState => ({ ...prevState, category: val() }))} />
+            <Picker placeholder={'Select Category'} items={items} value={state.category} 
+            setValue={(val) => setState(prevState => ({ ...prevState, category: val() }))}
+             />
           </View>
           <Button
             color={Colors.secondary}
@@ -254,8 +256,8 @@ export default AddProduct
 
 const styles = StyleSheet.create({
   productWrapper: {
-    flexGrow:1,
-    paddingBottom:Platform.OS === 'ios' && responsiveHeight(8),
+    flexGrow: 1,
+    paddingBottom: Platform.OS === 'ios' && responsiveHeight(8),
     // paddingBottom:responsiveHeight(5),
     paddingTop: responsiveHeight(5),
     alignItems: 'center'
@@ -280,7 +282,7 @@ const styles = StyleSheet.create({
     width: responsiveHeight(7)
   },
   inputWrapper: {
-    zIndex:100,
+    zIndex: 100,
     paddingTop: responsiveHeight(8)
   },
   inputStyle: {

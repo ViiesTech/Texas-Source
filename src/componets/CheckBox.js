@@ -11,6 +11,7 @@ const Checkbox = (props) => {
     return (
         <View style={[styles.wrapper, props.style]}>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 15 }}>
+               {props?.box && 
                 <View style={styles.boxBorder}>
                     <BouncyCheckbox
                         size={16}
@@ -19,10 +20,11 @@ const Checkbox = (props) => {
                         disableBuiltInState
                         style={{ marginLeft: responsiveHeight(1.8) }}
                         innerIconStyle={{ display: 'none' }}
-                        onPress={(isChecked) => { console.log(isChecked) }}
+                        onPress={props?.onChecked}
                     />
                 </View>
-                <Text style={styles.label}>{props?.text}</Text>
+                }
+                <Text onPress={props?.onSelectCard} style={styles.label}>{props?.text}</Text>
             </View>
             {props.cash
                 ?

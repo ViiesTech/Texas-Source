@@ -22,6 +22,7 @@ import Profile from '../screens/mainScreens/Profile';
 import ProductDetail from '../screens/mainScreens/ProductDetail';
 import ChangePassword from '../screens/authScreens/ChangePassword';
 import EditProfile from '../screens/mainScreens/EditProfile';
+import Wallet from '../screens/mainScreens/Wallet';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -35,6 +36,7 @@ const MainStack = () => {
             <Stack.Screen name="Cart" component={Cart} />
             <Stack.Screen name="Payment" component={Payment} />
             <Stack.Screen name="MyOrder" component={MyOrder} />
+            <Stack.Screen name="Wallet" component={Wallet} />
             <Stack.Screen name="Dashboard" component={Dashboard} />
             <Stack.Screen name="AddProduct" component={AddProduct} />
             <Stack.Screen name="MyProduct" component={MyProduct} />
@@ -90,7 +92,13 @@ const CustomDrawerContent = () => {
                             style={{ paddingHorizontal: responsiveHeight(1) }}
                             key={item.id}
                             label={item.label}
-                            onPress={() => navigation.navigate(item?.navTo)}
+                            onPress={() => {
+                                if (item?.navTo === '') {
+                                    alert('working in progress')
+                                } else {
+                                    navigation.navigate(item?.navTo)
+                                }
+                            }}
                             labelStyle={styles.labelStyle}
                             icon={() => <DrawerIcon
                                 name={item.icon}

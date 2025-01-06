@@ -27,7 +27,10 @@ const Profile = () => {
     if (item?.id == 5) {
       await dispatch(Logout())
       return ShowToast('Logout Successfully')
-    } else {
+    } else if (item?.id == 4) {
+      alert('working in progress')
+    }
+    else {
       navigation.navigate(item?.nav)
     }
   }
@@ -39,7 +42,7 @@ const Profile = () => {
       <View style={styles.subContainer}>
         <View style={styles.profileContainer}>
           <Image
-            source={user?.UserProfile ? { uri:`https://appsdemo.pro/Texas_Server/${user?.UserProfile}` } : Images.user}
+            source={user?.UserProfile ? { uri: `https://appsdemo.pro/Texas_Server/${user?.UserProfile}` } : Images.user}
             style={styles.imageStyle}
           />
           <View style={styles.nameContainer}>
