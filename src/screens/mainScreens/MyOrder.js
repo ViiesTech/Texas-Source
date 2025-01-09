@@ -90,7 +90,6 @@ const MyOrder = () => {
         <View style={styles.reviewContainer}>
           <Cross onPress={() => {
             setReviewVisible(!reviewVisible)
-            navigation.navigate('explore1')
           }} name={'cross'} color={Colors.white} size={35} style={{ alignSelf: 'flex-end', paddingTop: responsiveHeight(1), marginRight: responsiveHeight(1) }} />
           <View style={styles.subContainer2}>
             <Text style={styles.heading}>Rate Your Product</Text>

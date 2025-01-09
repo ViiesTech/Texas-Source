@@ -12,7 +12,7 @@ import React, { useState } from 'react';
 import { Images } from '../../assets/Images/Index';
 import { Input } from '../../componets/Input';
 import { Button } from '../../componets/Button';
-import { responsiveFontSize, responsiveHeight, responsiveWidth } from '../../utils';
+import { requestPermission, responsiveFontSize, responsiveHeight, responsiveWidth } from '../../utils';
 import { useRegisterMutation } from '../../redux/Services';
 import { ShowToast } from '../../GlobalFunctions/ShowToast';
 import { useNavigation } from '@react-navigation/native';
@@ -108,6 +108,8 @@ console.log(form.company_image.path)
   };
 
   const onSelectImage = async () => {
+     const status = await requestPermission('media') 
+     if(status === 'granted') {
     const options = {
       title: 'Select Image',
       storageOptions: {
@@ -132,6 +134,10 @@ console.log(form.company_image.path)
         );
       }
     });
+  }  else {
+      return ShowToast('Permission denied')
+    }
+  
   };
 
   return (
@@ -174,7 +180,9 @@ console.log(form.company_image.path)
                 <Input
                   value={form.company_image.name}
                   style={styles.inputStyle}
+                  // editable={Platform.OS === 'ios' ? true : false}
                   editable={false}
+                  onPress={() => onSelectImage()}
                   placeHolder={'Select photo'}
                 />
                 </TouchableOpacity>

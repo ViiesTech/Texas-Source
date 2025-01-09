@@ -11,10 +11,13 @@ import { useNavigation } from '@react-navigation/native'
 import { useDispatch, useSelector } from 'react-redux'
 import { Logout } from '../../redux/Slice'
 import { ShowToast } from '../../GlobalFunctions/ShowToast'
+import { useDeleteUserMutation } from '../../redux/Services'
+import SpinLoader from '../../componets/SpinLoader'
 
 const Profile = () => {
 
   const { user, baseUrl } = useSelector(state => state.persistedData)
+  const [deleteUser, { isLoading }] = useDeleteUserMutation()
 
   const navigation = useNavigation()
   const dispatch = useDispatch()
@@ -25,6 +28,18 @@ const Profile = () => {
 
   const onOptionPress = async (item) => {
     if (item?.id == 5) {
+      await deleteUser().unwrap().then((res) => {
+        if (res.success) {
+          return ShowToast(res.message)
+        } else {
+          return ShowToast(res.message)
+        }
+      }).catch((error) => {
+        console.log('failed deleting the account ====>',error)
+        return ShowToast('Some problem occured')
+
+      })
+    } else if (item?.id == 6) {
       await dispatch(Logout())
       return ShowToast('Logout Successfully')
     } else if (item?.id == 4) {
@@ -65,6 +80,8 @@ const Profile = () => {
           })}
         </View>
       </View>
+      <SpinLoader
+                 handleSpinner={isLoading} />
     </Container>
   )
 }

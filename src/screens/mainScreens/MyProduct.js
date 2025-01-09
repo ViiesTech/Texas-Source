@@ -92,7 +92,7 @@ const MyProduct = () => {
                 {renderMyProducts()}
             </View>
             <SpinLoader
-                er handleSpinner={deleteLoading} />
+                 handleSpinner={deleteLoading} />
         </Container>
     )
 }

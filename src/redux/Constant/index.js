@@ -28,5 +28,6 @@ export const endpoints = {
     GET_ALL_CARDS: 'listSavedCards',
     GET_USER_ORDERS: 'getAllUserOrder',
     GET_OWNER_ORDERS: 'getAllOwnerOrder',
-    ADD_REVIEW: 'RateAProduct'
+    ADD_REVIEW: 'RateAProduct',
+    DELETE_ACCOUNT: 'Delete'
 }

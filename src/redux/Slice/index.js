@@ -52,6 +52,10 @@ export const Slice = createSlice({
                 state.customer_id = action.payload.customerId
             }
         })
+        builder.addMatcher(Apis.endpoints.deleteUser.matchFulfilled, (state, action) => {
+            state.user = {}
+            state.token = ''
+        })
     }
 
 

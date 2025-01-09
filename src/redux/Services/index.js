@@ -178,6 +178,12 @@ export const Apis = createApi({
                 method: 'POST',
                 body: data
             })
+        }),
+        deleteUser: builder.mutation({
+            query: () => ({
+                url: endpoints.DELETE_ACCOUNT,
+                method: 'DELETE'
+            })
         })
     })
 })
@@ -206,5 +212,6 @@ export const {
     useAttachPaymentMutation,
     useGetUserOrdersMutation,
     useGetOwnerOrdersMutation,
-    useAddReviewMutation
+    useAddReviewMutation,
+    useDeleteUserMutation
 } = Apis;

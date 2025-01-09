@@ -1,6 +1,7 @@
+import { PERMISSIONS, request } from "react-native-permissions";
 import icons from "../assets/icons";
 import { Images } from "../assets/Images/Index";
-import { Dimensions } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 
 
 export const data = [
@@ -267,6 +268,12 @@ export const profileOptions = [
     },
     {
         id: 5,
+        text: 'Delete Account',
+        icon: icons.key,
+        // nav: 'Dashboard'
+    },
+    {
+        id: 6,
         text: 'Logout',
         icon: icons.logout
     }
@@ -331,3 +338,41 @@ export const statusData = [
         value: 'delivered'
     }
 ]
+
+
+export const requestPermission = async permissionType => {
+    let permissionSet;
+    const apiLevel = Platform.constants.Release;
+    console.log('hello world', apiLevel);
+    if (Platform.OS === 'ios') {
+      switch (permissionType) {
+        case 'media':
+          permissionSet = Platform.select({
+            ios: PERMISSIONS.IOS.PHOTO_LIBRARY,
+          });
+          break;
+       
+        default:
+          console.log('unknown permission type');
+      }
+    } else if (Platform.OS === 'android') {
+      switch (permissionType) {
+        case 'media':
+          if (apiLevel < 10) {
+            permissionSet = Platform.select({
+              android: PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE,
+            });
+          } else {
+            return 'granted'; 
+          }
+          break;
+       
+        default:
+          console.log('unknown permission type');
+      }
+    }
+    if (permissionSet) {
+      const status = await request(permissionSet);
+      return status;
+    }
+  };
